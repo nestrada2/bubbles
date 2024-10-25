@@ -57,6 +57,14 @@ def create_bookshelf(
         None
     """
 
+    bookshelf_count = 1
+
+    # Finding the Next Available Bookshelf Number in case Other Bookshelves have Been Created Before
+    while (len(cmds.ls(f'Bookshelf_{bookshelf_count}')) > 0):
+        bookshelf_count += 1
+
+    bookshelf_name = f'Bookshelf_{bookshelf_count}'
+
     # Store the List of Objects
     objects = []
        
@@ -67,18 +75,18 @@ def create_bookshelf(
     frame_height = shelf_count * shelf_spacing + shelf_thickness
     
     # Create/Move Left Side of the Bookshelf
-    cmds.polyCube(name='left_side', width=frame_thickness, height=frame_height, depth=shelf_depth)
+    cmds.polyCube(name=f'{bookshelf_name}_left_side', width=frame_thickness, height=frame_height, depth=shelf_depth)
     cmds.move(-shelf_width/2 - frame_thickness/2, frame_height/2, 0) # Note: Maya places objects at the origin (0, 0, 0) by default
-    objects.append('left_side')
+    objects.append(f'{bookshelf_name}_left_side')
     
     # Create/Move Right Side of the Bookshelf
-    cmds.polyCube(name='right_side', width=frame_thickness, height=frame_height, depth=shelf_depth)
+    cmds.polyCube(name=f'{bookshelf_name}_right_side', width=frame_thickness, height=frame_height, depth=shelf_depth)
     cmds.move(shelf_width/2 + frame_thickness/2, frame_height/2, 0)
-    objects.append('right_side')
+    objects.append(f'{bookshelf_name}_right_side')
 
     # Create Shelves
     for i in range(0, shelf_count + 1):
-        shelf_name = f'shelf_{i + 1}'
+        shelf_name = f'{bookshelf_name}_shelf_{i + 1}'
         shelf_y = (i * shelf_spacing) + (shelf_thickness/2)
 
         # Create/Move Current Shelf
@@ -91,7 +99,7 @@ def create_bookshelf(
             add_books_to_shelf(shelf_name, shelf_num=i, objects=objects, book_count=book_count, shelf_spacing=shelf_spacing, shelf_width=shelf_width, shelf_thickness=shelf_thickness, color_option = color_option, specific_color=specific_color)
     
     #  Group All the Objects Together
-    cmds.group(*objects, name="Bookshelf")
+    cmds.group(*objects, name=bookshelf_name)
 
 def add_books_to_shelf(
         shelf_name: str,
