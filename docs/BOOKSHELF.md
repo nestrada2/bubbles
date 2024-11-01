@@ -13,7 +13,7 @@
   </p>
 </div>
 
-<!-- OVERVIEW OF COMMANDS -->
+<!-- OVERVIEW OF BOOKSHELF COMMANDS -->
 ## 📖 Overview of Bookshelf Commands
 The `create_bookshelf()` and `create_bookshelf_ui()` commands allow users to create customizable 3D bookshelves directly in Maya. The `create_bookshelf()` command generates the bookshelf model based on specified parameters, while `create_bookshelf_ui()` provides a user-friendly interface for setting these parameters visually.
 
@@ -23,6 +23,10 @@ The `create_bookshelf()` and `create_bookshelf_ui()` commands allow users to cre
 - `bookshelf.py` - Generates a 3D bookshelf model in Maya with custom settings.
 #### ui:
 - `create_bookshelf_ui.py` - Script to create a user-friendly interface for setting up a bookshelf with custom settings in Maya.
+
+<!-- Script Overview -->
+## **🔧 Main Bookshelf Script**
+The `bookshelf.py` script is the core of the Bookshelf tool, containing all functionality required to generate a customizable 3D bookshelf in Maya. It can be run independently or with the `create_bookshelf_ui()`. 
 
 <!-- Parameters -->
 ### **🔖 Parameter Reference**
@@ -59,9 +63,10 @@ create_bookshelf(shelf_count=14, shelf_spacing=3.0, shelf_width=12.5, add_books=
 
 <!-- UI Overview -->
 ## **🖥️ UI Overview**
-The `create_bookshelf_ui()` command opens a user interface that allows you to customize a bookshelf.
+The `create_bookshelf_ui()` command opens a user interface that allows you to customize a bookshelf. It can not be run independently, as it relies on `bookshelf.py` to function properly, which contains the core functionality required for bookshelf creation. Make sure both scripts are available when running.
 
 ![Bookshelf UI Example](./images/UI%20Example.png)
+<br />
 *Example of the 'Create Bookshelf' UI in Maya*
 
 <!-- UI -->
