@@ -43,16 +43,16 @@ def create_bookshelf_ui():
     cmds.text(label='Bookshelf Dimensions')
     
     # Shelf Parameters: Input Fields
-    shelf_count_field = cmds.intFieldGrp(label='Shelf Count', value1=5)
+    shelf_count_field = cmds.intFieldGrp(label='Shelf Count', value1=10)
     shelf_width_field = cmds.floatFieldGrp(label='Shelf Width', value1=10)
-    shelf_height_field = cmds.floatFieldGrp(label='Shelf Height', value1=0.5)
+    shelf_thickness_field = cmds.floatFieldGrp(label='Shelf Thickness', value1=0.5)
     shelf_depth_field = cmds.floatFieldGrp(label='Shelf Depth', value1=1)
     shelf_spacing_field = cmds.floatFieldGrp(label='Shelf Spacing', value1=2)
     
     # Bookshelf Options
     shelf_count=cmds.intFieldGrp(shelf_count_field, query=True, value1=True),
     shelf_width=cmds.floatFieldGrp(shelf_width_field, query=True, value1=True),
-    shelf_height=cmds.floatFieldGrp(shelf_height_field, query=True, value1=True),
+    shelf_hthickness=cmds.floatFieldGrp(shelf_thickness_field, query=True, value1=True),
     shelf_depth=cmds.floatFieldGrp(shelf_depth_field, query=True, value1=True),
     shelf_spacing=cmds.floatFieldGrp(shelf_spacing_field, query=True, value1=True)
 
@@ -68,12 +68,13 @@ def create_bookshelf_ui():
 
     # Optional: Book Color Options (None, Random, Specific)
     color_option_field = cmds.radioButtonGrp(label='Book Colors', labelArray3=['None', 'Random', 'Specific'], numberOfRadioButtons=3, select=1)
-    color_picker_field = cmds.colorSliderGrp(label='Choose Color', rgb=(1, 1, 1))
+    color_picker_field = cmds.colorSliderGrp(label='Choose Color', rgb=(0, 0, 0))
 
     # Button to Create Bookshelf and Add Books
     cmds.button(label='Create Bookshelf with Books', command=lambda _: create_bookshelf(
         shelf_count=cmds.intFieldGrp(shelf_count_field, query=True, value1=True),
         shelf_width=cmds.floatFieldGrp(shelf_width_field, query=True, value1=True),
+         shelf_thickness=cmds.floatFieldGrp(shelf_thickness_field, query=True, value1=True),
         shelf_depth=cmds.floatFieldGrp(shelf_depth_field, query=True, value1=True),
         shelf_spacing=cmds.floatFieldGrp(shelf_spacing_field, query=True, value1=True),
         add_books=cmds.checkBoxGrp(add_books_field, query=True, value1=True),

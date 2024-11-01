@@ -7,7 +7,7 @@
   <p align="center">
     Python Scripts for "Bubbles" - A Maya Animated Short
     <br />
-    <a href="https://github.com/nestrada2/bubbles"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nestrada2/bubbles/tree/main/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/nestrada2/bubbles/issues/new?labels=bug&template=bug_report.md">Report Bug</a>
@@ -37,17 +37,24 @@ A 3D animated short that follows a young child blowing bubbles in a library. Uti
    ```sh
    git clone https://github.com/nestrada2/bubbles.git
    ```
-2. **Inport the Script into Maya**
+2. **Import the Script into Maya**
    - Open Maya
    - Open the Script Editor (Window > General Editors > Script Editor)
    - Copy/paste the script into the Python tab of the Script Editor
 
 ### **▶️ Running the Program**
 1. **Execute the Script**
-   - In the Maya Script Editor, click Execute (`Ctrl + Enter`) to run the script
+   - In the Maya Script Editor, make sure the language is set to Python, and click Execute (`Ctrl + Enter`) to run the script
 2. **Run Commands**
-     - `create_bookshelf()` - generates a bookshelf with default or custom settings
-     - `create_bookshelf_ui()` - creates a user-friendly interface for creating a bookshelf
+- **Generates a bookshelf with default or custom settings**
+    ```
+    create_bookshelf()
+    ```
+
+- **Creates a user-friendly interface for creating a bookshelf**
+    ```
+    create_bookshelf_ui()
+    ```
 
 <!-- LICENSE -->
 ## 📜 License

@@ -37,7 +37,7 @@ def create_bookshelf(
         add_books: bool = False,
         book_count: int = 10,
         color_option: int = 1,
-        specific_color: tuple = (1, 1, 1)
+        specific_color: tuple = (0, 0, 0)
 ) -> None:
     """
     Creates a bookshelf based on the specified parameters.
