@@ -47,12 +47,12 @@ A 3D animated short that follows a young child blowing bubbles in a library. Uti
    - In the Maya Script Editor, make sure the language is set to Python, and click Execute (`Ctrl + Enter`) to run the script
 2. **Run Commands**
 - **Generates a bookshelf with default or custom settings**
-    ```
+    ```python
     create_bookshelf()
     ```
 
 - **Creates a user-friendly interface for creating a bookshelf**
-    ```
+    ```python
     create_bookshelf_ui()
     ```
 

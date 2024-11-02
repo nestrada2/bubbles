@@ -16,11 +16,14 @@ Usage:
 - Can be use in conjuction with create_bookshelf_ui() to create a user-friendly interface for creating the bookshelf.
 
 Examples:
-# Create a basic bookshelf with 10 shelves
-create_bookshelf(shelf_count=10)
+# Create a basic bookshelf with 12 shelves
+create_bookshelf(shelf_count=12)
 
 # Create 7 shelves with 32 books on each shelf, randomly placed
-create_bookshelf(shelf_count=10, add_books=True, book_count=32)
+create_bookshelf(shelf_count=7, add_books=True, book_count=32)
+
+Note: When specifying custom settings, it’s best to use keyword arguments (e.g., `create_bookshelf(shelf_count=10, shelf_width=12.5)`). 
+This ensures each argument is assigned correctly, regardless of the order, preventing potential misalignment.
 """
 
 
@@ -43,15 +46,15 @@ def create_bookshelf(
     Creates a bookshelf based on the specified parameters.
 
     Args:
-        shelf_count (int, optional): The number of shelves. Defaults to 10.
-        shelf_width (float, optional): The width of each shelf. Defaults to 10.
-        shelf_thickness (float, optional): The thickness of each shelf. Defaults to 0.5.
-        shelf_depth (float, optional): The depth of each shelf. Defaults to 1.
-        shelf_spacing (float, optional): The spacing between shelves. Defaults to 2.
-        add_books (bool, optional): Add books to the bookshelf. Defaults to false.
-        book_count (int, optional): The number of books on each shelf. Defaults to 10.
-        color_option (int, optional): 1 = No color (default), 2= random, and 3 = specific color.
-        specific_color (tuple, optional): The specify color of each book if color option = 3. Defaults to black, (0, 0, 0).
+        shelf_count (int, optional): The number of shelves. (default: 10)
+        shelf_width (float, optional): The width of each shelf. (default: 10)
+        shelf_thickness (float, optional): The thickness of each shelf. (default: 0.5)
+        shelf_depth (float, optional): The depth of each shelf. (default: 1)
+        shelf_spacing (float, optional): The spacing between shelves. (default: 2)
+        add_books (bool, optional): Add books to the bookshelf. (default: False)
+        book_count (int, optional): The number of books on each shelf. (default: 10)
+        color_option (int, optional): 1 = No color (default), 2 = random, and 3 = specific color.
+        specific_color (tuple, optional): The specify color of each book if color option = 3. (default: (0, 0, 0))
 
     Returns:
         None
@@ -119,12 +122,12 @@ def add_books_to_shelf(
         shelf_name (str): The name of the shelf transform node in Maya.
         shelf_num (int): The index of the shelf where books will be placed.
         objects (list): The list of all the objects within the current bookshelf for grouping purposes.
-        shelf_spacing (float, optional): The spacing between shelves. Defaults to 2.
-        shelf_width (float, optional): The width of each shelf. Defaults to 10.
-        shelf_thickness (float, optional): The thickness of each shelf. Defaults to 0.5.
-        book_count (float, optional): The number of books to place on the shelf. Defaults to 10.
-        color_option (int, optional): 1 = No color (default), 2= random, and 3 = specific color.
-        specific_color (tuple, optional): The specify color of each book if color option = 3. Defaults to black, (0, 0, 0).
+        shelf_spacing (float, optional): The spacing between shelves. (default: 2)
+        shelf_width (float, optional): The width of each shelf. (default: 10)
+        shelf_thickness (float, optional): The thickness of each shelf. (default: 0.5)
+        book_count (float, optional): The number of books to place on the shelf. (default: 10)
+        color_option (int, optional): 1 = No color (default), 2 = random, and 3 = specific color.
+        specific_color (tuple, optional): The specify color of each book if color option = 3. (default: (0, 0, 0))
 
     Returns:
         None
@@ -183,8 +186,8 @@ def apply_colors_to_books(color_option: int, specific_color: tuple) -> None:
     Applies the specify color option to the last book created. 
 
     Args:
-        color_option (int, optional): 1 = No color (default), 2= random, and 3 = specific color.
-        specific_color (tuple, optional): The specify color of each book if color option = 3. Defaults to black, (0, 0, 0).
+        color_option (int, optional): 1 = No color (default), 2 = random, and 3 = specific color.
+        specific_color (tuple, optional): The specify color of each book if color option = 3. (default: (0, 0, 0))
 
     Returns:
         None

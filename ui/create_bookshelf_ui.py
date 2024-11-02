@@ -18,6 +18,10 @@ Usage:
 Examples:
 # Generate bookshelf ui
 create_bookshelf_ui()
+
+Note: This script cannot be run independently, as it relies on `bookshelf.py` to function properly, 
+which contains the core functionality required for bookshelf creation. Make sure both scripts 
+are available when running.
 """
 
 
