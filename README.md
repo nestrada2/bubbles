@@ -56,6 +56,10 @@ A 3D animated short that follows a young child blowing bubbles in a library. Uti
     create_bookshelf_ui()
     ```
 
+<!-- CREDITS -->
+## 🎉 Credits
+**Kayla Rig**: Used with permission from [Frigging Awesome Studios](https://friggingawesome.gumroad.com/l/kayla-rig). Thank you for providing this awesome rig!
+
 <!-- LICENSE -->
 ## 📜 License
 Distributed under the MIT License. See [`LICENSE.txt`](LICENSE.txt) for more information.
