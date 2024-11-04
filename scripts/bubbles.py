@@ -37,15 +37,16 @@ def create_bubbles(bubble_count: int = 10) -> List[Dict[str, float]]:
         radius = random.uniform(0.1, 0.5)
         x_pos = random.uniform(0.1, 5)
         y_pos = random.uniform(0.1, 5)
+        z_pos = random.uniform(0.1, 5)
 
         # Create Bubble
-        bubble_name = f'bubble_{i}'
+        bubble_name = f'bubble_{i + 1}'
         bubble = cmds.polySphere(name=bubble_name, radius=radius)[0]
 
         # Store Bubble Info
         bubbles.append({'name': bubble_name, 'radius': radius})
 
         # Move Bubble
-        cmds.move(x_pos, y_pos, 0, bubble)
+        cmds.move(x_pos, y_pos, z_pos, bubble)
 
     return bubble
